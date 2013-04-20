@@ -30,8 +30,8 @@ let g:loaded_folcom = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-setlocal foldmethod=expr
-setlocal foldexpr=folcom#expr(v:lnum)
+set foldmethod=expr
+set foldexpr=folcom#expr(v:lnum)
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
