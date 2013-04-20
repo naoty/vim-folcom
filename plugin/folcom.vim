@@ -7,7 +7,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 setlocal foldmethod=expr
-setlocal foldexpr=folcom#expr(v:lumn)
+setlocal foldexpr=folcom#expr(v:lnum)
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
