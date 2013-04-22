@@ -3,7 +3,9 @@ set cpo&vim
 
 function! folcom#expr(lnum)
   let line = getline(a:lnum)
-  if line =~ '^\s*\("\|//\|#\)\s'
+  if line =~ '^\s*\("\|//\|#\)\s\+'
+    return 1
+  elseif line =~ '^\s*\("\|//\|#\)$'
     return 1
   elseif line =~ '^\s*/\*'
     return 1
@@ -14,6 +16,7 @@ function! folcom#expr(lnum)
   else
     return 0
   end
+
 endfunction
 
 let &cpo = s:save_cpo
